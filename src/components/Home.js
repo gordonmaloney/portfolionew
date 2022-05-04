@@ -4,17 +4,12 @@ import { ReactWobble } from "../react-wobble/react-wobble";
 import { Link } from "react-router-dom";
 import { AnimatedPageDown } from "./AnimatedPageDown";
 
+import { AnimatedPageUp } from "./AnimatedPages/Up";
+
 export const Home = () => {
 
   return (
-    <AnimatedPageDown
-      animations={{
-        initial: { opacity: 0, x: 0, y: 0},
-        animate: { opacity: 1, x: 0, y: 0 },
-        exit: { opacity: 0, y: 100 },
-      }}
-    >
-      <Link to="../about">
+      <Link to="../d/about">
         <div
           style={{
             display: "flex",
@@ -48,6 +43,5 @@ export const Home = () => {
           </div>
         </div>
       </Link>
-    </AnimatedPageDown>
   );
 };

@@ -1,10 +1,10 @@
-import React, {useState}from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { AnimatedPageDown } from "./AnimatedPageDown";
 
 export const Portfolio = () => {
-    const [xExit, setxExit] = useState()
-    const [yExit, setyExit] = useState()
+  const [xExit, setxExit] = useState();
+  const [yExit, setyExit] = useState();
 
   return (
     <AnimatedPageDown
@@ -23,18 +23,25 @@ export const Portfolio = () => {
           width: "100vw",
         }}
       >
-        Portfolio
+        <div style={{ width: "70%"}}>
+          <center>
+            <h1>Portfolio</h1>
+          </center>
 
-        <div onClick={() => setxExit(100)}>
-        <Link to="../contact">Contact Me</Link>
-        </div>
+          <div style={{ float: "left" }} onClick={() => setxExit(100)}>
+            <Link to="../l/contact">Get in touch</Link>
+          </div>
 
-<div onClick={() => setxExit(-100)}>
-        <Link to="../about">About Me</Link>
-        </div>
+          <div style={{ float: "right" }} onClick={() => setxExit(-100)}>
+            <Link to="../r/about">About Me</Link>
+          </div>
+          <br />
 
-        <div onClick={() => setyExit(-100)}>
-        <Link to="../">go down</Link>
+          <center>
+            <div onClick={() => setyExit(-100)}>
+              <Link to="../u/home">Home</Link>
+            </div>
+          </center>
         </div>
       </div>
     </AnimatedPageDown>
