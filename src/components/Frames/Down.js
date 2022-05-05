@@ -31,6 +31,12 @@ export const Down = () => {
             case "about":
               return <AboutMe />;
               break;
+            case "portfolio":
+              return <Portfolio />;
+              break;
+            case "contact":
+              return <ContactMe />;
+              break;
             default:
               return "neutral";
           }

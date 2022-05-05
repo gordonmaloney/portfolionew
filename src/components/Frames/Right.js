@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { useParams } from "react-router";
 import { AnimatedPageRight } from "../AnimatedPages/Right";
 
@@ -8,9 +8,12 @@ import { Portfolio } from "../Portfolio";
 import { ContactMe } from "../ContactMe";
 
 export const Right = () => {
+
+  const [exitX, setExitX] = useState(-100)
   const params = useParams();
+
   return (
-    <AnimatedPageRight exitX={-100}>
+    <AnimatedPageRight >
       <div
         style={{
           display: "flex",
@@ -26,7 +29,7 @@ export const Right = () => {
               return <Home />;
               break;
             case "about":
-              return <AboutMe />;
+              return <AboutMe/>;
               break;
             case "portfolio":
               return <Portfolio />;

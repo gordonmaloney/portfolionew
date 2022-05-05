@@ -13,7 +13,7 @@ export const Left = () => {
   const [exitX, setExitX] = useState(100);
 
   return (
-    <AnimatedPageLeft exitX={exitX}>
+    <AnimatedPageLeft >
       <div
         style={{
           display: "flex",

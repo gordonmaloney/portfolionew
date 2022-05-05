@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 
-export const AnimatedPageDown = ({ children, animations }) => {
+export const AnimatedPage = ({ children, animations }) => {
+  
   return (
     <motion.div
       variants={animations}

@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import SimplexNoise from "simplex-noise";
 import { spline } from "@georgedoescode/spline";
 
-export const Blob = ({colour, radius}) => {
+export const Blob = ({colour, radius, squash}) => {
   let noiseStep = 0.0015;
 
   const simplex = new SimplexNoise();
@@ -22,7 +22,7 @@ export const Blob = ({colour, radius}) => {
       const theta = i * angleStep;
 
       const x = 100 + Math.cos(theta) * rad;
-      const y = 100 + Math.sin(theta) * rad/1.4;
+      const y = 100 + Math.sin(theta) * rad/squash;
 
       points.push({
         x: x,

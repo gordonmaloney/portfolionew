@@ -1,47 +1,58 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { Blob } from "./Blob";
 import { ReactWobble } from "../react-wobble/react-wobble";
 import { Link } from "react-router-dom";
-import { AnimatedPageDown } from "./AnimatedPageDown";
+import { AnimatedPage } from "./AnimatedPage";
 
-import { AnimatedPageUp } from "./AnimatedPages/Up";
 
 export const Home = () => {
+  const [xExit, setxExit] = useState();
+  const [yExit, setyExit] = useState();
 
   return (
-      <Link to="../d/about">
-        <div
-          style={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            height: "100vh",
-            width: "100vw",
-          }}
-        >
+    <AnimatedPage
+      animations={{
+        initial: { opacity: 0, y: 0, x: 0 },
+        animate: { opacity: 1, y: 0, x: 0 },
+        exit: { opacity: 0, y: yExit, x: xExit },
+      }}
+    >
+      <div onClick={() => setyExit(100)}>
+        <Link to="../d/about">
           <div
             style={{
-              position: "relative",
-              width: "500px",
-              maxWidth: "80%",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
+              height: "100vh",
+              width: "100vw",
             }}
           >
-            <Blob colour="#8bd3dd" radius={90} />
+            <div
+              style={{
+                position: "relative",
+                width: "500px",
+                maxWidth: "80%",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Blob colour="#8bd3dd" radius={90} squash={1.4} />
 
-            <Blob colour="#f3d2c1" radius={85} />
+              <Blob colour="#f3d2c1" radius={85} squash={1.4} />
 
-            <Blob colour="#001858" radius={78} />
+              <Blob colour="#001858" radius={78} squash={1.4} />
 
-            <h1 className="logoHeader">
-              Gordon
-              <br />
-              Maloney
-            </h1>
+              <h1 className="logoHeader">
+                Gordon
+                <br />
+                Maloney
+              </h1>
+            </div>
           </div>
-        </div>
-      </Link>
+        </Link>
+      </div>
+    </AnimatedPage>
   );
 };

@@ -11,7 +11,7 @@ export const Up = () => {
   const params = useParams();
 
   return (
-    <AnimatedPageUp exitY={100}>
+    <AnimatedPageUp >
       <div
         style={{
           display: "flex",
@@ -28,6 +28,12 @@ export const Up = () => {
               break;
             case "about":
               return <AboutMe />;
+              break;
+            case "portfolio":
+              return <Portfolio />;
+              break;
+            case "contact":
+              return <ContactMe />;
               break;
             default:
               return "neutral";
