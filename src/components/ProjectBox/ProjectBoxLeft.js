@@ -30,31 +30,37 @@ useEffect(() => {
 
   return (
     
-    <Grid container alignItems={"center"}>
-    <Grid item xs={6} md={12}></Grid>
+    <Grid container alignItems={"center"}
+    style={{
+      marginBottom: screenWidth.width > 900 ? 0 : "20px"
+    }}>
+    <Grid item xs={4} sm={6} md={12}></Grid>
 
     <Grid
       item
-      xs={6}
+      xs={8}
+      sm={6}
       md={4}
       style={{ zIndex: 5, display: "flex", justifyContent: "flex-end" }}
     >
       <div
         style={{
           position: "relative",
-          width: "100%",
+          width: "105%",
           maxWidth: "200px",
           display: "flex",
           alignItems: "center",
           justifyContent: "flex-start",
           pointerEvents: "none",
+          marginBottom: screenWidth.width > 900 ? 0 : "-45px"
         }}
       >
         <Blob colour="#001858" radius={95} squash={1} />
-        <p className="projectDesc">
+        <p className="projectDesc"><span className="projectDescHighlight" >
 {desc}          <br />
           <br />
           read more
+        </span>
         </p>
       </div>
     </Grid>

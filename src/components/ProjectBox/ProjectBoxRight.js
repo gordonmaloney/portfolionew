@@ -31,31 +31,36 @@ useEffect(() => {
 
   return (
     
-    <Grid container alignItems={"center"}>
+    <Grid container alignItems={"center"}     style={{
+      marginBottom: screenWidth.width > 900 ? 0 : "20px"
+    }}>
             
     <Hidden mdUp>
   <Grid
       item
-      xs={6}
+      xs={8}
+      sm={6}
       md={0}
       style={{ zIndex: 5, display: "flex", justifyContent: "flex-end" }}
     >
       <div
         style={{
           position: "relative",
-          width: "100%",
+          width: "105%",
           maxWidth: "200px",
           display: "flex",
           alignItems: "center",
           justifyContent: "flex-start",
           pointerEvents: "none",
+          marginBottom: screenWidth.width > 900 ? 0 : "-45px"
         }}
       >
         <Blob colour="#001858" radius={95} squash={1} />
-        <p className="projectDesc">
-{desc}                 <br />
+        <p className="projectDesc"><span className="projectDescHighlight" >
+{desc}          <br />
           <br />
           read more
+        </span>
         </p>
       </div>
     </Grid>
@@ -95,7 +100,7 @@ useEffect(() => {
     </Grid>
 
 
-<Hidden smDown >
+<Hidden mdDown >
     <Grid
       item
       xs={0}
@@ -105,7 +110,7 @@ useEffect(() => {
       <div
         style={{
           position: "relative",
-          width: "100%",
+          width: "105%",
           maxWidth: "200px",
           display: "flex",
           alignItems: "center",
@@ -114,10 +119,11 @@ useEffect(() => {
         }}
       >
         <Blob colour="#001858" radius={95} squash={1} />
-        <p className="projectDesc">
-        {desc}                     <br />
+        <p className="projectDesc"><span className="projectDescHighlight" >
+{desc}          <br />
           <br />
           read more
+        </span>
         </p>
       </div>
     </Grid>
