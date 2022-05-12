@@ -9,6 +9,10 @@ body {
   background-color: #fef6e4;
 }
 
+a {
+  text-decoration: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -39,4 +43,56 @@ code {
   font-size: 2rem;
   line-height: 2rem;
 }
+}
+
+
+
+
+
+
+.iframeWrap {
+  width: auto;
+  height: auto;
+  overflow: hidden;
+padding: 0;
+margin: 0;
+  border: 5px #8bd3dd solid;
+  border-radius: 10px;
+  position: relative;
+}
+
+.scaled-frame {
+z-index: 50;
+  overflow: auto;
+  width: 168%;
+  height: 1000px;
+  border: 0px;
+  padding: 0px;
+  margin-bottom: -405px;
+}
+
+.scaled-frame {
+  background-color: white;
+  zoom: 0.6;
+  -moz-transform: scale(0.6);
+  -moz-transform-origin: 0 0;
+  -o-transform: scale(0.6);
+  -o-transform-origin: 0 0;
+  -webkit-transform: scale(0.6);
+  -webkit-transform-origin: 0 0;
+}
+
+
+@media screen and (max-width: 750px) {
+  .scaled-framze {
+    width: 126%;
+    height: 1000px;
+    zoom: 0.8;
+    -moz-transform: scale(0.8);
+    -moz-transform-origin: 0 0;
+    -o-transform: scale(0.8);
+    -o-transform-origin: 0 0;
+    -webkit-transform: scale(0.8);
+    -webkit-transform-origin: 0 0;
+  }
 }

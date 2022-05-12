@@ -1,11 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AnimatedPage } from "./AnimatedPage";
 import { Blob } from "./Blob";
+import { SquareBlob } from "./SquareBlob";
 
 export const Portfolio = () => {
   const [xExit, setxExit] = useState();
   const [yExit, setyExit] = useState(0);
+
+
+  //set shape of square blob
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth)
+
+  function getWindowDimensions() {
+    const { innerWidth: width } = window;
+    return {
+      width
+    };
+  }
+
+  useEffect(() => {
+    setScreenWidth(getWindowDimensions());
+
+    function handleResize() {
+      setScreenWidth(getWindowDimensions());
+    }
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  console.log(screenWidth.width > 800 ? 1 : screenWidth.width > 300 ? 2-(((screenWidth.width/100)/4)-1) : 2)
+
 
   return (
     <AnimatedPage
@@ -18,12 +44,15 @@ export const Portfolio = () => {
     <div
       style={{
         display: "flex",
-        alignItems: "center",
         justifyContent: "center",
         height: "100vh",
         width: "100vw",
+        scroll: "auto",
+        overflow: "scroll",
+paddingTop: "100px"
       }}
     >
+      
       <div style={{ width: "70%", maxWidth: "600px", minWidth: "300px" }}>
         <div style={{ float: "left" }}>
           <div
@@ -53,7 +82,25 @@ export const Portfolio = () => {
           <p style={{ width: "90%" }}>
             Here's some of my work...
           </p>
+
+          
         </center>
+
+<div style={{width: "100%", height: "500px", 
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",            position: "relative",
+}}>
+
+        <SquareBlob colour="#8bd3dd" radius={90} squash={1} squareScale={screenWidth.width > 800 ? 1 : screenWidth.width > 400 ? 2 - (((screenWidth.width/100)/4)-1) : 2} />
+
+        <div style={{width: "100%"}} className="iframeWrap">
+
+
+<iframe className="scaled-frame" src="http://whatluck.netlify.app" ></iframe>
+
+</div>
+</div>
 
           <div style={{ float: "left" }} onClick={() => setxExit(100)}>
             <Link to="../l/contact">Get in touch</Link>

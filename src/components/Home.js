@@ -35,7 +35,7 @@ export const Home = () => {
                 maxWidth: "80%",
                 display: "flex",
                 alignItems: "center",
-                justifyContent: "center",
+                justifyContent: "center"
               }}
             >
               <Blob colour="#8bd3dd" radius={90} squash={1.4} />
