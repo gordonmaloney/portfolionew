@@ -2,8 +2,11 @@ import React, {useEffect, useState} from 'react'
 import { Grid } from '@mui/material'
 import { Blob } from '../Blob'
 import { SquareBlob } from '../SquareBlob'
+import { Link } from 'react-router-dom'
+import { BlobLink } from '../BlobLink'
 
-export const ProjectBoxLeft = ({desc, url}) => {
+
+export const ProjectBoxLeft = ({desc, url, setyExit, title}) => {
 
     
 //set shape of square blob
@@ -59,7 +62,17 @@ useEffect(() => {
         <p className="projectDesc"><span className="projectDescHighlight" >
 {desc}          <br />
           <br />
-          read more
+          <Link
+          to={`../d/frame/${title}`}
+          style={{pointerEvents: 'auto'}}
+          onClick={() => setyExit(100)}
+          >
+            <BlobLink 
+            content="read more"
+            width={90}
+            colour="#8bd3dd"
+            />
+          </Link>
         </span>
         </p>
       </div>

@@ -1,34 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AnimatedPage } from "./AnimatedPage";
 import { Blob } from "./Blob";
-
-const BlobLink = ({ content, width, colour }) => {
-  return (
-    <div
-      style={{
-        position: "relative",
-        width: width,
-        display: "inline-flex",
-        alignItems: "center",
-        justifyContent: "center",
-        zIndex: "-1",
-      }}
-    >
-      <Blob colour={colour} radius={95} squash={2.8} />
-
-      <span style={{ zIndex: 5 }}>
-        <a href="mailto:gordonmaloney@gmail.com" target="_blank">
-          <u>{content}</u>
-        </a>
-      </span>
-    </div>
-  );
-};
+import { BlobNavLink } from "./BlobNavLink";
+import { BlobLink } from "./BlobLink";
 
 export const ContactMe = () => {
   const [xExit, setxExit] = useState();
   const [yExit, setyExit] = useState(0);
+
+
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  function getWindowDimensions() {
+    const { innerWidth: width } = window;
+    return {
+      width,
+    };
+  }
+
+  useEffect(() => {
+    setScreenWidth(getWindowDimensions());
+
+    function handleResize() {
+      setScreenWidth(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <AnimatedPage
@@ -58,7 +58,7 @@ export const ContactMe = () => {
                 alignItems: "center",
                 justifyContent: "center",
                 pointerEvents: "none",
-              }}
+             }}
             >
               <Blob colour="#8bd3dd" radius={90} squash={2.1} />
 
@@ -69,14 +69,11 @@ export const ContactMe = () => {
               <h1 className="subHeader">Get in touch</h1>
             </div>
           </div>
-          <br /> <br />
-          <br />
-          <br />
           <center>
-            <p style={{ width: "90%" }}>
+            <p style={{ width: "90%", marginTop: "130px" }}>
               You can get in touch with me{" "}
               <a href="mailto:gordonmaloney@gmail.com" target="_blank">
-                <BlobLink content="over e-mail" width={80} colour="#8bd3dd" />
+                <BlobLink content="over e-mail" width={90} colour="#8bd3dd" />
               </a>
               <br />
               <br />
@@ -98,18 +95,17 @@ export const ContactMe = () => {
               </a>
             </p>
           </center>
-          <div style={{ float: "left" }} onClick={() => setxExit(100)}>
-            <Link to="../l/about">About Me</Link>
+          <div style={{ position: "fixed", left: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => setxExit(100)}>
+            <Link to="../l/about">              <BlobNavLink text="About me" />
+ </Link>
           </div>
-          <div style={{ float: "right" }} onClick={() => setxExit(-100)}>
-            <Link to="../r/portfolio">Portfolio</Link>
+          <div style={{ position: "fixed", right: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => setxExit(-100)}>
+            <Link to="../r/portfolio">
+            <BlobNavLink text="My work" />
+
+            </Link>
           </div>
-          <br />
-          <center>
-            <div onClick={() => setyExit(-100)}>
-              <Link to="../u/home">Home</Link>
-            </div>
-          </center>
+
         </div>
       </div>
     </AnimatedPage>

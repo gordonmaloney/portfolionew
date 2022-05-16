@@ -1,12 +1,34 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { AnimatedPage } from "./AnimatedPage";
 import { Blob } from "./Blob";
+import { BlobNavLink } from "./BlobNavLink";
+import { BlobLink } from "./BlobLink";
 
 export const AboutMe = () => {
   const [xExit, setxExit] = useState();
   const [yExit, setyExit] = useState(0);
 
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  function getWindowDimensions() {
+    const { innerWidth: width } = window;
+    return {
+      width,
+    };
+  }
+
+  useEffect(() => {
+    setScreenWidth(getWindowDimensions());
+
+    function handleResize() {
+      setScreenWidth(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  
   return (
     <AnimatedPage
       animations={{
@@ -46,11 +68,8 @@ export const AboutMe = () => {
               <h1 className="subHeader">About Me</h1>
             </div>
           </div>
-          <br /> <br />
-          <br />
-          <br />
           <center>
-            <p style={{width: "90%"}}>
+          <p style={{ width: "90%", marginTop: "130px" }}>
               I am a full-stack web developer, specialising in React.
               <br /> <br />
               I have worked for more than five years testing and perfecting user
@@ -65,21 +84,24 @@ export const AboutMe = () => {
               place.
               <br />
               <br />
-              Let's chat!
+              <Link to="../r/contact" onClick={() => setxExit(-100)}>
+
+              <BlobLink content="Let's chat!" width={90} colour="#8bd3dd" />
+            </Link>
             </p>
           </center>
-          <div style={{ float: "left" }} onClick={() => setxExit(100)}>
-            <Link to="../l/portfolio">Portfolio</Link>
+          <div style={{ position: "fixed", left: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => setxExit(100)}>
+            <Link to="../l/portfolio">
+            
+            <BlobNavLink text="My work" />
+
+            </Link>
           </div>
-          <div style={{ float: "right" }} onClick={() => setxExit(-100)}>
-            <Link to="../r/contact">Get in touch</Link>
+          <div style={{ position: "fixed", right: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => setxExit(-100)}>
+            <Link to="../r/contact">
+            <BlobNavLink text="Get in touch" />
+              </Link>
           </div>
-          <br />
-          <center>
-            <div onClick={() => setyExit(-100)}>
-              <Link to="../u/home">Home</Link>
-            </div>
-          </center>
         </div>
       </div>
     </AnimatedPage>

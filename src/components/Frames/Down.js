@@ -7,6 +7,8 @@ import { AboutMe } from "../AboutMe";
 import { Portfolio } from "../Portfolio";
 import { ContactMe } from "../ContactMe";
 
+import { Frame } from "../Projects/Frame";
+
 export const Down = () => {
   const params = useParams();
 
@@ -34,9 +36,12 @@ export const Down = () => {
             case "portfolio":
               return <Portfolio />;
               break;
-            case "contact":
-              return <ContactMe />;
-              break;
+              case "contact":
+                return <ContactMe />;
+                break;      
+                     case "frame":
+                return <Frame />;
+                break;
             default:
               return "neutral";
           }

@@ -27,6 +27,7 @@ export const App = () => {
           
           <Route path="/u/:component" element={<Up />} />
           <Route path="/d/:component" element={<Down />} />
+          <Route path="/d/:component/:project" element={<Down />} />
           <Route path="/r/:component" element={<Right />} />
           <Route path="/l/:component" element={<Left />} />
 

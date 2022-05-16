@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Blob } from "./Blob";
-import { ReactWobble } from "../react-wobble/react-wobble";
 import { Link } from "react-router-dom";
 import { AnimatedPage } from "./AnimatedPage";
 

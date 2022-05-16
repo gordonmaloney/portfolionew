@@ -6,6 +6,7 @@ import { SquareBlob } from "./SquareBlob";
 import { Button, Grid, Hidden } from "@mui/material";
 import { ProjectBoxLeft } from "./ProjectBox/ProjectBoxLeft";
 import { ProjectBoxRight } from "./ProjectBox/ProjectBoxRight";
+import { BlobNavLink } from "./BlobNavLink";
 
 export const Portfolio = () => {
   const [xExit, setxExit] = useState();
@@ -39,7 +40,7 @@ export const Portfolio = () => {
       animations={{
         initial: { opacity: 0, y: 0, x: 0 },
         animate: { opacity: 1, y: 0, x: 0 },
-        exit: { opacity: 0, y: 0, x: xExit },
+        exit: { opacity: 0, y: yExit, x: xExit },
       }}
     >
       <div
@@ -75,30 +76,35 @@ export const Portfolio = () => {
               <h1 className="subHeader">My work</h1>
             </div>
           </div>
-          <br /> <br />
-          <br />
-          <br />        <br /> <br />
-          <br />
+          <p style={{ width: "90%", marginTop: "130px" }}>
           <center>
             Check out some of my projects below, and feel free to play with the fully-functional, live versions of them all:
           </center>
-          <br /><br />
+          </p>
           <ProjectBoxLeft
             desc="whatLuck is the one-stop potluck organising app"
+            title="whatluck"
+            setyExit={(y) => {setyExit(y); setxExit(0)}}
             url="https://whatluck.netlify.app"
           />
           <ProjectBoxRight
             desc="Lingr is a microblogging site for language learners"
             url="https://lingr.netlify.app"
-          />
+            title="lingr"
+            setyExit={(y) => {setyExit(y); setxExit(0)}}
+            />
           <ProjectBoxLeft
             desc="Gobbleblog is the answer to never getting a bad takeaway twice"
             url="https://gobbleblog.netlify.app"
-          />
+            title="gobbleblog"
+            setyExit={(y) => {setyExit(y); setxExit(0)}}
+            />
           <ProjectBoxRight
             desc="Flashback is a spaced-repetition flashcard app for memorising anything"
             url="https://flashbackflashcards.netlify.app/"
-          />
+            title="flashback"
+            setyExit={(y) => {setyExit(y); setxExit(0)}}
+            />
           {!more && (
             <center>
               <div
@@ -127,21 +133,29 @@ export const Portfolio = () => {
               <ProjectBoxLeft
                 desc="Make Space is a tool to stop men dominating meetings"
                 url="https://make-space.netlify.app"
+                title="makespace"
+                setyExit={(y) => {setyExit(y); setxExit(0)}}
               />
 
               <ProjectBoxRight
                 desc="Facle is a Scottish Gaelic Wordle clone"
                 url="https://facle.netlify.app/"
+                title="facle"
+                setyExit={(y) => {setyExit(y); setxExit(0)}}
               />
 
               <ProjectBoxLeft
                 desc="Cuimhne is a Gaelic-language memory game"
                 url="https://cuimhne.netlify.app"
+                title="cuimhne"
+                setyExit={(y) => {setyExit(y); setxExit(0)}}
               />
 
               <ProjectBoxRight
                 desc="GymBud is an app for gym-users to record and track their progress"
                 url="https://gym-bud.netlify.app"
+                title="gymbud"
+                setyExit={(y) => {setyExit(y); setxExit(0)}}
               />
             
 
@@ -168,11 +182,19 @@ export const Portfolio = () => {
 </center>
 </>
           )}
-          <div style={{ float: "left" }} onClick={() => setxExit(100)}>
-            <Link to="../l/contact">Get in touch</Link>
+
+
+          <div style={{ position: "fixed", left: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => {setxExit(100); setyExit(0)}}>
+            <Link to="../l/contact">
+              <BlobNavLink text="Get in touch" />
+              </Link>
           </div>
-          <div style={{ float: "right" }} onClick={() => setxExit(-100)}>
-            <Link to="../r/about">About Me</Link>
+
+
+          <div style={{ position: "fixed", right: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => {setxExit(-100); setyExit(0)}}>
+            <Link to="../r/about">
+            <BlobNavLink text="About me" />
+</Link>
           </div>
         </div>
       </div>
