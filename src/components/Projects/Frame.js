@@ -41,16 +41,18 @@ export const Frame = () => {
       exit: { opacity: 0, y: yExit, x: 0 },
     }}
   >
-    <div
+          <div
         style={{
           display: "flex",
-          alignItems: "center",
           justifyContent: "center",
-          height: "100%",
-          width: "100%",
+          height: "100vh",
+          width: "100vw",
+          scroll: "auto",
+          overflow: "scroll",
+          paddingTop: "100px",
         }}
       >
-        <div style={{ width: "70%", maxWidth: "600px", minWidth: "300px" }}>
+        <div style={{ width: "70%", maxWidth: "800px", minWidth: "300px" }}>
         
         <center>
         <div onClick={() => setyExit(-100)}>

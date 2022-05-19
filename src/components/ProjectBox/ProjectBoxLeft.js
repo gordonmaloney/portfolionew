@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 import { BlobLink } from '../BlobLink'
 
 
-export const ProjectBoxLeft = ({desc, url, setyExit, title}) => {
+export const ProjectBoxLeft = ({desc, url, setyExit, title, hidereadmore}) => {
 
     
 //set shape of square blob
@@ -60,7 +60,9 @@ useEffect(() => {
       >
         <Blob colour="#001858" radius={95} squash={1} />
         <p className="projectDesc"><span className="projectDescHighlight" >
-{desc}          <br />
+{desc}         
+
+{!hidereadmore  && <> <br />
           <br />
           <Link
           to={`../d/frame/${title}`}
@@ -73,6 +75,7 @@ useEffect(() => {
             colour="#8bd3dd"
             />
           </Link>
+          </>}
         </span>
         </p>
       </div>
