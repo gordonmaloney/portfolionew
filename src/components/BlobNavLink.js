@@ -13,7 +13,6 @@ export const BlobNavLink = ({text}) => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                pointerEvents: "none" 
               }}
             >
               <Blob colour="#f3d2c1" radius={85} squash={2.1} />

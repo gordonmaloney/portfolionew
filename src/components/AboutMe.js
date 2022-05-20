@@ -70,18 +70,18 @@ export const AboutMe = () => {
           </div>
           <center>
           <p style={{ width: "90%", marginTop: "130px" }}>
-              I am a full-stack web developer, specialising in React.
+              My name is <b>Gordon Maloney</b>, and I'm a <b>full-stack web developer</b>, specialising in <b>React</b>.
               <br /> <br />
-              I have worked for more than five years testing and perfecting user
+              I have worked for <b>more than five years</b> testing and perfecting user
               journeys, and have recently taken the leap into freelance web
-              developing.
+              developing, having completed the <b>NuCamp full-stack bootcamp.</b>
               <br /> <br />
-              I can help you plan, design and build user-friendly front-ends and
-              clean, simple back-ends.
+              I can help you plan, design and build <b>user-friendly front-ends</b> and
+              <b>clean, simple back-ends</b>.
               <br /> <br />
               I am particularly passionate about helping not-for-profits and
-              social justice groups use digital tools to make the world a better
-              place.
+              social justice groups <b>use digital tools to make the world a better
+              place</b>.
               <br />
               <br />
               <Link to="../r/contact" onClick={() => setxExit(-100)}>
@@ -90,14 +90,14 @@ export const AboutMe = () => {
             </Link>
             </p>
           </center>
-          <div style={{ position: "fixed", left: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => setxExit(100)}>
+          <div style={{ zIndex: 6, position: "fixed", left: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => setxExit(100)}>
             <Link to="../l/portfolio">
             
             <BlobNavLink text="My work" />
 
             </Link>
           </div>
-          <div style={{ position: "fixed", right: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => setxExit(-100)}>
+          <div style={{ zIndex: 6, position: "fixed", right: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => setxExit(-100)}>
             <Link to="../r/contact">
             <BlobNavLink text="Get in touch" />
               </Link>

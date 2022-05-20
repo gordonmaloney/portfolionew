@@ -126,7 +126,6 @@ useEffect(() => {
           display: "flex",
           alignItems: "center",
           justifyContent: "flex-start",
-          pointerEvents: "none",
         }}
       >
         <Blob colour="#001858" radius={95} squash={1} />

@@ -44,7 +44,7 @@ useEffect(() => {
       xs={8}
       sm={6}
       md={4}
-      style={{ zIndex: 5, display: "flex", justifyContent: "flex-end" }}
+      style={{ zIndex: 2, display: "flex", justifyContent: "flex-end" }}
     >
       <div
         style={{
@@ -54,14 +54,13 @@ useEffect(() => {
           display: "flex",
           alignItems: "center",
           justifyContent: "flex-start",
-          pointerEvents: "none",
+          zIndex: 5,
           marginBottom: screenWidth.width > 900 ? 0 : "-45px"
         }}
       >
         <Blob colour="#001858" radius={95} squash={1} />
         <p className="projectDesc"><span className="projectDescHighlight" >
 {desc}         
-
 {!hidereadmore  && <> <br />
           <br />
           <Link

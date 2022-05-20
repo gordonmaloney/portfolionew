@@ -114,3 +114,13 @@ z-index: 50;
     -webkit-transform-origin: 0 0;
   }
 }
+
+.code {
+  background-color: black;
+  color: yellow;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.z5 {
+  z-index: 5 !important;
+}

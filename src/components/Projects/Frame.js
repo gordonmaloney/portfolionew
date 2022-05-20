@@ -5,6 +5,9 @@ import { useParams } from 'react-router';
 import { Link } from "react-router-dom";
 import { BlobNavLink } from "../BlobNavLink";
 import { WhatLuck } from './WhatLuck';
+import { Gobbleblog } from "./Gobbleblog";
+import { Lingr } from "./Lingr";
+import { Flashback } from "./Flashback";
 
 export const Frame = () => {
   const [yExit, setyExit] = useState(0);
@@ -55,8 +58,8 @@ export const Frame = () => {
         <div style={{ width: "70%", maxWidth: "800px", minWidth: "300px" }}>
         
         <center>
-        <div onClick={() => setyExit(-100)}>
-          <Link to="../u/portfolio">
+        <div style={{zIndex: 9}} onClick={() => setyExit(-100)}>
+          <Link style={{zIndex: 9, backgroundColor: "green"}} to="../u/portfolio">
             
             <BlobNavLink text="Back" />
 
@@ -69,13 +72,34 @@ export const Frame = () => {
             case "whatluck":
               return <WhatLuck />;
               break;
+            case "gobbleblog":
+              return <Gobbleblog />;
+              break;
+              case "lingr":
+                return <Lingr />;
+                break;
+
+              case "flashback":
+                return <Flashback />;
+                break;
             default:
-              return <>{params.project} descriptor page not built</>;
+              return <>More details about <b>{params.project}</b> coming soon...</>;
           }
         })()}
 
+
+<center>
+        <div style={{marginTop: "-100px", paddingBottom: '100px', zIndex: 9}} onClick={() => setyExit(-100)}>
+          <Link style={{zIndex: 9, backgroundColor: "green"}} to="../u/portfolio">
+            
+            <BlobNavLink text="Back" />
+
+            </Link>
+            </div>
+            </center>
 </div>
 </div>
+
     </AnimatedPage>
   )
 }

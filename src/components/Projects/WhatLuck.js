@@ -3,9 +3,10 @@ import { ProjectBoxLeft } from "../ProjectBox/ProjectBoxLeft";
 import { Grid, Hidden } from "@mui/material";
 import { BlobLink } from "../BlobLink";
 import Wlrn from "../imgs/wl-rn.jpg";
-import Wlss1 from "../imgs/wlss1.png";
-import Wlss2 from "../imgs/wlss2.png";
-import Wlss3 from "../imgs/wlss3.png";
+import Wlss1 from '../imgs/wlss1.mov';
+import Wlss2 from '../imgs/wlss2.mov';
+import Wlss3 from '../imgs/wlss3.mov';
+
 
 export const WhatLuck = () => {
   return (
@@ -13,7 +14,7 @@ export const WhatLuck = () => {
       <ProjectBoxLeft
         desc="whatLuck is the one-stop potluck organising app"
         title="whatluck"
-        url="http://whatluck.netlify.app"
+        url="https://whatluck.netlify.app"
         hidereadmore={true}
       />
 
@@ -40,7 +41,8 @@ export const WhatLuck = () => {
           </center>
         </Grid>
 
-        <Grid item xs={12} md={8}>
+        <Grid item xs={12} sm={8}>
+
           The front-end uses{" "}
           <b>React, Redux, Bootstrap, Material UI and Axios</b>, the back-end
           uses <b>MongoDB, Express and Node.js</b>. There is also an app version
@@ -80,8 +82,8 @@ export const WhatLuck = () => {
           </Hidden>
         </Grid>
 
-        <Grid item xs={12} sm={2} ></Grid>
-        <Grid item xs={12} sm={8}>
+
+        <Grid item xs={12} sm={4}>
           <center>
             <img
               style={{
@@ -139,7 +141,7 @@ export const WhatLuck = () => {
           marginRight: "auto",
           width: "80%",
           minWidth: "320px",
-          paddingBottom: "10px"
+          paddingBottom: "20px"
         }}
         direction="row"
         alignItems="center"
@@ -152,7 +154,10 @@ export const WhatLuck = () => {
           share the link with their friends.
         </Grid>
         <Grid item xs={12} sm={8}>
-          <img
+          <video
+                    mute={true}
+
+         loop={true} autoPlay={true}
             src={Wlss1}
             style={{
               transform: "rotate(2deg)",
@@ -173,7 +178,7 @@ export const WhatLuck = () => {
           marginRight: "auto",
           width: "80%",
           minWidth: "320px",
-          paddingBottom: "10px"
+          paddingBottom: "20px"
 
         }}
         direction="row-reverse"
@@ -183,7 +188,10 @@ export const WhatLuck = () => {
           Users can search potlucks by theme, user or title.
         </Grid>
         <Grid item xs={12} sm={6}>
-          <img
+        <video
+                  mute={true}
+
+         loop={true} autoPlay={true}
             src={Wlss2}
             style={{
               transform: "rotate(-2deg)",
@@ -215,7 +223,10 @@ export const WhatLuck = () => {
           already bringing an item.
         </Grid>
         <Grid item xs={12} sm={8}>
-          <img
+        <video
+         loop={true} autoPlay={true}
+         mute={true}
+
             src={Wlss3}
             style={{
               transform: "rotate(3deg)",

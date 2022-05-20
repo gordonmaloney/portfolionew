@@ -73,7 +73,13 @@ export const ContactMe = () => {
             <p style={{ width: "90%", marginTop: "130px" }}>
               You can get in touch with me{" "}
               <a href="mailto:gordonmaloney@gmail.com" target="_blank">
-                <BlobLink content="over e-mail" width={90} colour="#8bd3dd" />
+                <BlobLink content="over e-mail," width={90} colour="#8bd3dd" />
+              </a>
+              <br />
+              <br />
+              Buy me a coffee{" "}
+              <a href="https://ko-fi.com/gordonmaloney" target="_blank">
+                <BlobLink content="on Ko-Fi," width={75} colour="#8bd3dd" />
               </a>
               <br />
               <br />
@@ -95,11 +101,11 @@ export const ContactMe = () => {
               </a>
             </p>
           </center>
-          <div style={{ position: "fixed", left: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => setxExit(100)}>
+          <div style={{ zIndex: 6, position: "fixed", left: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => setxExit(100)}>
             <Link to="../l/about">              <BlobNavLink text="About me" />
  </Link>
           </div>
-          <div style={{ position: "fixed", right: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => setxExit(-100)}>
+          <div style={{ zIndex: 6, position: "fixed", right: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => setxExit(-100)}>
             <Link to="../r/portfolio">
             <BlobNavLink text="My work" />
 
