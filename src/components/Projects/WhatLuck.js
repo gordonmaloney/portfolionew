@@ -2,34 +2,26 @@ import React from "react";
 import { ProjectBoxLeft } from "../ProjectBox/ProjectBoxLeft";
 import { Grid, Hidden } from "@mui/material";
 import { BlobLink } from "../BlobLink";
-import Wlrn from "../imgs/wl-rn.jpg";
-import Wlss1 from '../imgs/wlss1.mov';
-import Wlss2 from '../imgs/wlss2.mov';
-import Wlss3 from '../imgs/wlss3.mov';
 
+import { ScreenShot } from "./components/ScreenShot";
+import { GridContainer } from "./components/GridContainer";
+import { GridDescContainer } from "./components/GridDescContainer";
+
+import Wlrn from "../imgs/wl-rn.jpg";
+import Wlss1 from "../imgs/wlss1.mov";
+import Wlss2 from "../imgs/wlss2.mov";
+import Wlss3 from "../imgs/wlss3.mov";
 
 export const WhatLuck = () => {
   return (
     <div style={{ paddingTop: "50px", paddingBottom: "200px" }}>
       <ProjectBoxLeft
         desc="whatLuck is the one-stop potluck organising app"
-        title="whatluck"
         url="https://whatluck.netlify.app"
-        hidereadmore={true}
+        hidereadmore
       />
 
-      <Grid
-        container
-        spacing={2}
-        style={{
-          marginLeft: "auto",
-          marginRight: "auto",
-          width: "70%",
-          minWidth: "300px",
-        }}
-        direction="row-reverse"
-        alignItems="center"
-      >
+      <GridDescContainer rowReverse>
         <Grid item xs={12}>
           <center>
             <span style={{ fontSize: "20px" }}>
@@ -42,7 +34,6 @@ export const WhatLuck = () => {
         </Grid>
 
         <Grid item xs={12} sm={8}>
-
           The front-end uses{" "}
           <b>React, Redux, Bootstrap, Material UI and Axios</b>, the back-end
           uses <b>MongoDB, Express and Node.js</b>. There is also an app version
@@ -81,7 +72,6 @@ export const WhatLuck = () => {
             front-end bootcamp.
           </Hidden>
         </Grid>
-
 
         <Grid item xs={12} sm={4}>
           <center>
@@ -130,113 +120,35 @@ export const WhatLuck = () => {
             front-end bootcamp.
           </Grid>
         </Hidden>
-      </Grid>
-      <br />
-      <br />
-      <Grid
-        container
-        spacing={2}
-        style={{
-          marginLeft: "auto",
-          marginRight: "auto",
-          width: "80%",
-          minWidth: "320px",
-          paddingBottom: "20px"
-        }}
-        direction="row"
-        alignItems="center"
-      >
-        <Grid item xs={12}>
-        <h3>Feature highlight:</h3>
-        </Grid>
+      </GridDescContainer>
+
+      <GridContainer row first>
         <Grid item xs={12} sm={4}>
           Each potluck is assigned a unique, 3-word code which users can use to
           share the link with their friends.
         </Grid>
         <Grid item xs={12} sm={8}>
-          <video
-                    mute={true}
-
-         loop={true} autoPlay={true}
-            src={Wlss1}
-            style={{
-              transform: "rotate(2deg)",
-              borderRadius: "15px",
-              border: "5px solid #8bd3dd",
-              width: "90%",
-            }}
-          />
+          <ScreenShot video src={Wlss1} rotate="2" />
         </Grid>
-
-
-</Grid>
-<Grid
-        container
-        spacing={2}
-        style={{
-          marginLeft: "auto",
-          marginRight: "auto",
-          width: "80%",
-          minWidth: "320px",
-          paddingBottom: "20px"
-
-        }}
-        direction="row-reverse"
-        alignItems="center"
-      >
-           <Grid item xs={12} sm={6}>
+      </GridContainer>
+      <GridContainer rowReverse>
+        <Grid item xs={12} sm={6}>
           Users can search potlucks by theme, user or title.
         </Grid>
         <Grid item xs={12} sm={6}>
-        <video
-                  mute={true}
-
-         loop={true} autoPlay={true}
-            src={Wlss2}
-            style={{
-              transform: "rotate(-2deg)",
-              borderRadius: "15px",
-              border: "5px solid #8bd3dd",
-              width: "90%",
-            }}
-          />
+          <ScreenShot video src={Wlss2} rotate="-2" />
         </Grid>
-    
-        </Grid>
+      </GridContainer>
 
-        <Grid
-        container
-        spacing={2}
-        style={{
-          marginLeft: "auto",
-          marginRight: "auto",
-          width: "80%",
-          minWidth: "320px",
-          paddingBottom: "10px"
-
-        }}
-        direction="row"
-        alignItems="center"
-      >
+      <GridContainer row>
         <Grid item xs={12} sm={4}>
           When replying, users are given a heads up message if someone is
           already bringing an item.
         </Grid>
         <Grid item xs={12} sm={8}>
-        <video
-         loop={true} autoPlay={true}
-         mute={true}
-
-            src={Wlss3}
-            style={{
-              transform: "rotate(3deg)",
-              borderRadius: "15px",
-              border: "5px solid #8bd3dd",
-              width: "90%",
-            }}
-          />
+          <ScreenShot video src={Wlss3} rotate="3" />
         </Grid>
-      </Grid>
+      </GridContainer>
     </div>
   );
 };

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,7 +12,8 @@ body {
 }
 
 a {
-  text-decoration: none;
+  text-decoration: inherit;
+  color: #001858
 }
 
 code {
@@ -23,6 +26,8 @@ code {
   font-size: 10vw;
   line-height: 10vw;
   z-index: 5;
+  font-family: "Lato";
+  font-weight: 900;
 }
 
 .subHeader {
@@ -30,6 +35,7 @@ code {
   font-size: 4vw;
   line-height: 4vw;
   z-index: 5;
+  font-family: "Lato" !important
 }
 
 
@@ -39,10 +45,12 @@ code {
   padding-left: 25px;
   padding-right: 25px;
   text-decoration: none;
+
 }
 
 .navbarBlobLink {
-  color: #001858
+  color: #001858;
+  font-family: "Lato"
 }
 
 .projectDescHighlight {
@@ -123,4 +131,18 @@ z-index: 50;
 
 .z5 {
   z-index: 5 !important;
+}
+
+.projectDescGrid {
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+  min-width: 320px;
+  padding-bottom: 20px
+}
+
+.projectSS {
+  border-radius: 15px;
+  border: 5px solid #8bd3dd;
+  width: 90%;
 }
