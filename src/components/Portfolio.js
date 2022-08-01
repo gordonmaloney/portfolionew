@@ -184,14 +184,14 @@ export const Portfolio = () => {
           )}
 
 
-          <div style={{ zIndex: 6, position: "fixed", left: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => {setxExit(100); setyExit(0)}}>
+          <div style={{ zIndex: 6, position: "fixed", left: screenWidth.width > 900 ? "5%" : "2%", top: "50vh", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => {setxExit(100); setyExit(0)}}>
             <Link to="../l/contact">
               <BlobNavLink text="Get in touch" />
               </Link>
           </div>
 
 
-          <div style={{ zIndex: 6, position: "fixed", right: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => {setxExit(-100); setyExit(0)}}>
+          <div style={{ zIndex: 6, position: "fixed", right: screenWidth.width > 900 ? "5%" : "2%", top: "50vh", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => {setxExit(-100); setyExit(0)}}>
             <Link to="../r/about">
             <BlobNavLink text="About me" />
 </Link>

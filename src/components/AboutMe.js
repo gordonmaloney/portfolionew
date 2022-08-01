@@ -28,7 +28,7 @@ export const AboutMe = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  
+
   return (
     <AnimatedPage
       animations={{
@@ -56,7 +56,7 @@ export const AboutMe = () => {
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                pointerEvents: "none" 
+                pointerEvents: "none",
               }}
             >
               <Blob colour="#8bd3dd" radius={90} squash={2} />
@@ -69,38 +69,53 @@ export const AboutMe = () => {
             </div>
           </div>
           <center>
-          <p style={{ width: "90%", marginTop: "130px" }}>
-              My name is <b>Gordon Maloney</b>, and I'm a <b>full-stack web developer</b>, specialising in <b>React</b>.
-              <br /> <br />
-              I have worked for <b>more than five years</b> testing and perfecting user
-              journeys, and have recently taken the leap into freelance web
-              developing, having completed the <b>NuCamp full-stack bootcamp.</b>
-              <br /> <br />
-              I can help you plan, design and build <b>user-friendly front-ends</b> and
+            <p style={{ width: "90%", marginTop: "130px" }}>
+              My name is <b>Gordon Maloney</b>, and I'm a{" "}
+              <b>full-stack web developer</b>, specialising in <b>React</b>.
+              <br /> <br />I have worked for <b>more than five years</b> testing
+              and perfecting user journeys, and have recently taken the leap
+              into freelance web developing, having completed the{" "}
+              <b>NuCamp full-stack bootcamp.</b>
+              <br /> <br />I can help you plan, design and build{" "}
+              <b>user-friendly front-ends</b> and
               <b>clean, simple back-ends</b>.
-              <br /> <br />
-              I am particularly passionate about helping not-for-profits and
-              social justice groups <b>use digital tools to make the world a better
-              place</b>.
+              <br /> <br />I am particularly passionate about helping
+              not-for-profits and social justice groups{" "}
+              <b>use digital tools to make the world a better place</b>.
               <br />
               <br />
               <Link to="../r/contact" onClick={() => setxExit(-100)}>
-
-              <BlobLink content="Let's chat!" width={90} colour="#8bd3dd" />
-            </Link>
+                <BlobLink content="Let's chat!" width={90} colour="#8bd3dd" />
+              </Link>
             </p>
           </center>
-          <div style={{ zIndex: 6, position: "fixed", left: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => setxExit(100)}>
+          <div
+            style={{
+              zIndex: 6,
+              position: "fixed",
+              left: screenWidth.width > 900 ? "5%" : "2%",
+              top: "50vh",
+              paddingTop: screenWidth.width > 900 ? 0 : "30vh",
+            }}
+            onClick={() => setxExit(100)}
+          >
             <Link to="../l/portfolio">
-            
-            <BlobNavLink text="My work" />
-
+              <BlobNavLink text="My work" />
             </Link>
           </div>
-          <div style={{ zIndex: 6, position: "fixed", right: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => setxExit(-100)}>
+          <div
+            style={{
+              zIndex: 6,
+              position: "fixed",
+              right: screenWidth.width > 900 ? "5%" : "2%",
+              top: "50vh",
+              paddingTop: screenWidth.width > 900 ? 0 : "30vh",
+            }}
+            onClick={() => setxExit(-100)}
+          >
             <Link to="../r/contact">
-            <BlobNavLink text="Get in touch" />
-              </Link>
+              <BlobNavLink text="Get in touch" />
+            </Link>
           </div>
         </div>
       </div>

@@ -101,11 +101,11 @@ export const ContactMe = () => {
               </a>
             </p>
           </center>
-          <div style={{ zIndex: 6, position: "fixed", left: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => setxExit(100)}>
+          <div style={{ zIndex: 6, position: "fixed", left: screenWidth.width > 900 ? "5%" : "2%", top: "50vh", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => setxExit(100)}>
             <Link to="../l/about">              <BlobNavLink text="About me" />
  </Link>
           </div>
-          <div style={{ zIndex: 6, position: "fixed", right: screenWidth.width > 900 ? "5%" : "2%", top: "50%", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => setxExit(-100)}>
+          <div style={{ zIndex: 6, position: "fixed", right: screenWidth.width > 900 ? "5%" : "2%", top: "50vh", paddingTop: screenWidth.width > 900 ? 0 : "30vh"}} onClick={() => setxExit(-100)}>
             <Link to="../r/portfolio">
             <BlobNavLink text="My work" />
 
